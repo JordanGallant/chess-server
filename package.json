@@ -2,16 +2,17 @@
   "private": true,
   "name": "my-app",
   "version": "1.0.0",
-  "description": "npm init template for bootstrapping an empty Colyseus project",
+  "description": "Colyseus server for chess game",
   "main": "build/index.js",
   "engines": {
-    "node": ">= 20.9.0"
+    "node": ">=20.9.0"
   },
   "scripts": {
-    "start": "tsx watch src/index.ts",
-    "loadtest": "tsx loadtest/example.ts --room my_room --numClients 2",
+    "start": "node build/index.js",
     "build": "npm run clean && tsc",
     "clean": "rimraf build",
+    "dev": "tsx watch src/index.ts",
+    "loadtest": "tsx loadtest/example.ts --room my_room --numClients 2",
     "test": "mocha -r tsx test/**_test.ts --exit --timeout 15000"
   },
   "author": "",
